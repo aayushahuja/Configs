@@ -46,6 +46,7 @@ nmap <leader>c zc<CR>
 map <leader>h :sp<cr>:Explore<cr>
 map <leader>v :vsp<cr>:Explore<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "This is the most important for me
 "control-c, control-v for copying,pasting
 map <C-V> "+gP
@@ -73,6 +74,7 @@ nmap <S-Up> <esc>v<Up>i
 imap <S-Down> <esc>v<Down>i 
 vmap <S-Down> <Down>i  
 nmap <S-Down> <esc>v<Down>i 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Set wildmenu
 set wildmenu
