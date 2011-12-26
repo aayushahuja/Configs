@@ -3,6 +3,8 @@ set nocompatible
 set smartindent
 set nu
 set incsearch
+set hlsearch
+set nowrap
 
 winpos 0 0
 set lines=500
@@ -30,8 +32,10 @@ autocmd FileType java set omnifunc=ccomplete#Complete
 "Clean up the GUI
 "T for toolbar,lrb for left,right,bottom scrollbars
 set guioptions-=T
-set guioptions-=b
-"set guioptions-=l
+set guioptions+=b
+set guioptions+=L
+set guioptions-=L
+set guioptions+=r
 set shortmess+=I
 
 "Key maps
@@ -39,8 +43,36 @@ let mapleader=","
 nmap <leader>n :tabedit $MYVIMRC<CR>
 nmap <leader>o zo<CR>
 nmap <leader>c zc<CR>
-map <leader>v :sp<cr>
-map <leader>h :vsp<cr>
+map <leader>h :sp<cr>:Explore<cr>
+map <leader>v :vsp<cr>:Explore<cr>
+
+"This is the most important for me
+"control-c, control-v for copying,pasting
+map <C-V> "+gP
+cmap <C-V> <C-R>+
+vnoremap <C-C> "+y
+vnoremap <C-X> "+x
+
+"Shift for copy pasting
+nnoremap <C-CR> i
+imap <C-CR> <Esc>
+vmap <C-CR> <Esc>
+
+imap <S-Left> <esc>v<Left>i 
+vmap <S-Left> <Left>i  
+nmap <S-Left> <esc>v<Left>i 
+
+imap <S-Right> <esc>v<Right>i 
+vmap <S-Right> <Right>i  
+nmap <S-Right> <esc>v<Right>i 
+
+imap <S-Up> <esc>v<Up>i 
+vmap <S-Up> <Up>i  
+nmap <S-Up> <esc>v<Up>i 
+
+imap <S-Down> <esc>v<Down>i 
+vmap <S-Down> <Down>i  
+nmap <S-Down> <esc>v<Down>i 
 
 "Set wildmenu
 set wildmenu
@@ -81,8 +113,6 @@ nmap <leader>V :source $MYVIMRC<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :wqa<CR>
 
-colorscheme torte
-
 
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
@@ -90,9 +120,4 @@ map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 set showmatch
 
-"control-c, control-v for copying,pasting
-map <C-V> "+gP
-cmap <C-V> <C-R>+
-vnoremap <C-C> "+y
-vnoremap <C-X> "+x
 
