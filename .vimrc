@@ -6,9 +6,9 @@ set incsearch
 set hlsearch
 set nowrap
 
-winpos 0 0
-set lines=500
-set columns=500
+ winpos 0 0
+ set lines=500
+"set columns=500
 
 "Backup directories to keep clean folders
 set backupdir=~/.vim-tmp
@@ -122,4 +122,4 @@ map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 set showmatch
 
-
+colorscheme slate
